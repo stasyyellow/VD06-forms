@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Информация о пользователях</h2>
+<form method="POST">
+    <div class="mb-3">
+        <label for="name" class="form-label">Имя</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="city" class="form-label">Город</label>
+        <input type="text" class="form-control" id="city" name="city" required>
+    </div>
+    <div class="mb-3">
+        <label for="hobby" class="form-label">Хобби</label>
+        <input type="text" class="form-control" id="hobby" name="hobby" required>
+    </div>
+    <div class="mb-3">
+        <label for="age" class="form-label">Возраст</label>
+        <input type="number" class="form-control" id="age" name="age" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить форму</button>
+</form>
+
+{% if name %}
+<hr>
+<h3>Заполненные формы:</h3>
+<ul>
+    <li><strong>Имя:</strong> {{ name }}</li>
+    <li><strong>Город:</strong> {{ city }}</li>
+    <li><strong>Хобби:</strong> {{ hobby }}</li>
+    <li><strong>Возраст:</strong> {{ age }}</li>
+</ul>
+{% endif %}
+{% endblock %}
